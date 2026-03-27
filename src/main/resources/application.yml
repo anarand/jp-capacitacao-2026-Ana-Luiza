@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: jp-capacitacao-2026
+
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    # Formatacao SQL no log para melhor leitura durante desenvolvimento
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    url: ${URL_DB:jdbc:oracle:thin:@//localhost:1521/XEPDB1}
+    username: ${USERNAME_DB:admin}
+    password: ${PASSWORD_DB:admin}
+    driverClassName: oracle.jdbc.driver.OracleDriver
+
+server:
+  port: 9090
+
+# Swagger UI disponivel em: http://localhost:9090/swagger-ui.html
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
